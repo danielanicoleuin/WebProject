@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News website</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;800&display=swap');
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+     .f10{
+       margin-left: 36px;
+      text-align: top;
+      padding: 20px;
+      display: flex;
+      font-size: 20px;
+      align-items: center;
+       height: 8px;
+       
+       font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+       color: rgb(253, 3, 3);
+       white-space: nowrap;
+       
+       
+      }
+      .f10 span{
+        
+       font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        color: rgb(249, 249, 5);
+       white-space: nowrap;
+       text-align: 70px;
+      }
+      .f11{
+        background-color: #000000;
+      }
+    body{ background-color: #9d9fed; }
+
+    /* SIDEBAR */
+    .slide{
+       height: 700px;
+       width: 180px;
+       position: absolute;
+       background-color:#e2e7f4; 
+       transition: 0.5s ease;
+       transform: translateX(-180px);
+       white-space: nowrap;
+     }
+     h1{
+      color : #ffffff;
+      font-weight: 800;
+      text-align: center;
+      padding: 8px 0;
+      padding-right: 25px;
+      pointer-events: none;
+     }
+     ul li{
+     List-style: none;
+     }
+     ul li a{
+     color: #010812;
+     font-weight: 500;
+     margin-left: 5px;
+     padding: 5px 0;
+     display: block;
+     text-transform: capitalize;
+     text-decoration: none;
+     transition: 0.2s ease-out;
+     }
+     ul li:hover a{
+      margin-left: 0px;
+      color: white;
+      background-color: rgb(52, 212, 212);
+     }
+     ul li a i{
+      width: 50px;
+      text-align: center;
+     } 
+     input{
+     display: none;
+     visibility: hidden;
+    
+     }
+     .toggle{
+     position: absolute;
+     height:28px;
+     width: 28px;
+     top: 64px;
+     Left: 15px;
+     z-index: 1;
+     cursor: pointer;
+     border-radius: 3px;
+     background-color: #dee6ef;
+     box-shadow: 0 0 10px rgba(2, 2, 2, 0.3);
+    }
+    .toggle .common{
+     position: absolute;
+     height: 4px;
+     width: 15px;
+     background-color :#000000;
+     border-radius: 50px;
+     transition: 0.3s ease;
+    }
+    .toggle .top_line{
+     top: 30%;
+     Left: 50%;
+     transform: translate(-50%, -50%);
+   }
+    .toggle .middle_line{
+     top: 50%; 
+     Left: 50%;
+     transform: translate(-50%, -50%);
+    }
+    .toggle .bottom_line{
+     top: 70%; 
+     Left: 50%;
+     transform: translate(-50%, -50%);
+     }
+     input:checked ~ .toggle .top_line{
+      Left: 2px;
+      top: 12px;
+      width: 23px;
+      transform: rotate(45deg);
+    }
+     input:checked ~ .toggle .bottom_line{
+      Left: 2px;
+      top: 12px;
+      width: 23px;
+      transform: rotate(-45deg); 
+     }
+      input:checked ~ .toggle .middle_line{
+      opacity: 0;
+      transform: translateX(20px);
+    }
+      input:checked ~ .slide{
+      transform: translateX(0);
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    }
+
+    html {
+      scroll-behavior: smooth;
+
+   }
+  .f1{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 100px;
+    margin-top: 1650px;
+    top:0%;
+    text-align: center;
+    margin-left: 1010px;
+    font-size: 25px;
+    color: rgb(111, 110, 110);
+    position: absolute;
+    
+  }
+  .f2{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 17px; 
+    text-align: justify;
+  }
+  .f3{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 25px;
+    font-size: 25px;
+    
+  }
+  .f4{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 100px;
+    font-size: 40px;
+    color: rgb(253, 3, 3);
+  }
+  .f5{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 100px;
+    font-size: 40px;
+    color: rgb(249, 249, 5);
+  }
+  .f6{
+    margin-left: 649px;
+    margin-right: 20px;
+    margin-top: -90px;
+    margin-bottom: 700px;
+    position: absolute;
+    line-height: 1.6;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    text-align: justify;
+    color: rgb(197, 197, 194);
+  }
+  .f7{
+    font-size: 25px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: rgb(222, 19, 127);
+  }
+  .f8{
+    text-align: left;
+     color: rgb(20, 19, 19);
+  }
+  .f8.active {
+    color: rgb(52, 212, 212); 
+    text-decoration: underline;
+  }
+  .f12{
+    margin-left:150px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 100px;
+    font-size: 30px;
+    color: rgb(253, 3, 3);
+  }
+  .f13{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 100px;
+    font-size: 30px;
+    color: rgb(249, 249, 5);
+  }
+  .f14{
+    font-size: 11px;
+    margin-left: 21px ;
+    color:  rgb(111, 110, 110);
+  }
+   .f15{
+    font-size: 11px;
+    margin-left: 130px ;
+  }
+  .f151{
+    font-size: 11px;
+    
+  }
+   .f152{
+    font-size: 11px;
+    
+  }
+     .f1523{
+    font-size: 11px;
+    
+  }
+  .f20{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+     color: rgb(111, 110, 110);
+     font-size: 25px;
+    font-weight: 100px;
+    margin-left: 710px;
+  }
+  .fixed-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+   .nav-link.active {
+    color: rgb(52, 212, 212); 
+    text-decoration: underline;
+     
+  }
+
+  
+  ul li a.active {
+    margin-left: 0px;
+    color: white;
+    background-color: rgb(52, 212, 212);
+  }
+    /* REACTION + COMMENT STYLES */
+    .reaction-section { margin-top: 20px; display: flex; gap: 10px; }
+    .like-btn, .dislike-btn {
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    .like-btn:hover { background-color: #d0f0d0; }
+    .dislike-btn:hover { background-color: #f0d0d0; }
+
+    .comment-section { margin-top: 30px; }
+    .comment-section h3 {
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      font-size: 25px;
+      margin-bottom: 10px;
+    }
+    #comments-list { margin-bottom: 20px; }
+    .comment {
+      background-color: #f9f9f9;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+    .reply {
+      background-color: #f0f0f0;
+      padding: 10px;
+      margin-left: 20px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+    #comment-form textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      resize: vertical;
+    }
+    #comment-form button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    #comment-form button:hover { background-color: #0056b3; }
+
+    .comment-reactions { margin-top: 10px; display: flex; gap: 10px; }
+    .comment-like-btn, .comment-dislike-btn, .comment-delete-btn, .comment-reply-btn {
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    .comment-like-btn:hover { background-color: #d0f0d0; }
+    .comment-dislike-btn:hover { background-color: #f0d0d0; }
+    .comment-delete-btn:hover { background-color: #f0d0d0; }
+    .comment-reply-btn:hover { background-color: #e0e0e0; }
+
+    .reply-form {
+      margin-top: 10px;
+      display: none;
+    }
+    .reply-form textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      resize: vertical;
+    }
+    .reply-form button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .reply-form button:hover { background-color: #0056b3; }
+  </style>
+</head>
+
+<body class="bg-blue-100" id="home">
+    <div class="fixed-top">
+        <div class="bg-black text-white">
+            <div class="container mx-auto flex justify-between items-center py-2 px-4">
+                <div class="flex space-x-4">
+                    <a href="#" class="text-white text-2xl"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-white text-2xl"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-white text-2xl"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white text-2xl"><i class="fab fa-youtube"></i></a>
+                </div>
+
+                <div class="flex-grow text-center">
+                    <div class="text-4xl font-bold">
+                        <span class="f4">POLITI</span><span class="f5">FACTS</span>
+                    </div>
+                </div>
+                
+                <div class="flex space-x-4 invisible">
+                    <a href="#" class="text-white text-2xl"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-white text-2xl"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-white text-2xl"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white text-2xl"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+      <label>
+        <input type="checkbox">
+          <div class="toggle">
+          <span class="top_line common"></span>
+          <span class="middle_line common"></span>
+          <span class="bottom_line common"></span>
+          </div>
+
+        <div class="slide">
+          <div class="f11">
+          <div class="f10">POLITI<span>FACTS</span></div>
+          </div>
+          <ul>
+            <li><a href="index.html"><h1 class=" f8 text-gray-700 font-extrabold text-[0.90rem]">HOME</h1></a></li>
+            <li><a href="politics.html"><h1 class=" f8 text-gray-700 font-extrabold text-[0.90rem]">POLITICS</h1></a></li>
+            <li><a href="election.html"><h1 class=" f8 text-gray-700 font-extrabold text-[0.90rem]">PUBLIC OPINION</h1></a></li>
+            <li><a href="government.html"><h1 class=" f8 text-gray-700 font-extrabold text-[0.90rem]">GOVERNMENT</h1></a></li>
+            
+            <li><a href="#members"><h1 class=" f8 text-gray-700 font-extrabold text-[0.90rem]">ABOUT US</h1></a></li>
+
+          </ul>
+
+        </div>
+      </label>
+       <div class="bg-white text-white">
+        <div class="flex items-center space-x-4 justify-end space-x-8 px-8 py-3 font-extrabold text-[0.65rem]">
+            <nav class="flex space-x-4 font-sans text-sm">
+                <a class="nav-link text-gray-700 hover:text-teal-500" href="index.html">HOME</a>
+                <a class="nav-link text-gray-700 hover:text-teal-500" href="politics.html">POLITICS</a>
+                <a class="nav-link text-gray-700 hover:text-teal-500"  href="election.html">PUBLIC OPINION</a>
+                <a class="nav-link text-gray-700 hover:text-teal-500" href="government.html">GOVERNMENT</a>
+              
+                <a class="nav-link text-gray-700 hover:text-teal-500" href="#about us">ABOUT US</a>
+                
+                
+            </nav>
+        </div>
+        </div>
+    </div>
+
+  <div class="flex justify-center mt-308" style="margin-top: 120px;">
+    <div class="article-container rounded-xl p-6 w-full max-w-90px text-center">
+      <div class="w-90px lg:w-3/4 px-10" style="margin-left: 150px;">
+        <div class="mb-8">
+          <h2 class="f3">
+            <a href="" class="f3 hover:text-teal-500">Bong Go denies links to Discayas: “Wala akong kinalaman sa kanila”.</a>
+          </h2>
+          <div class="border-t-2 border-gray-300 mb-4"></div>
+          <div class="mb-6">
+            <img class="w-full mb-2" src="images/background6.jpg"/>
+            <div class="flex items-center text-gray-600 text-sm mb-2">
+              <span>POLITICS</span>
+              <span class="mx-2">/</span>
+              <span>October 27, 2025</span>
+            </div>
+            <p class="f2">Go’s statement came after Department of Public Works and Highways (DPWH) Secretary Vince Dizon revealed that his office and the Office of the Ombudsman are investigating possible ties between the Discayas and CLTG Builders, a company in Davao City reportedly owned by Go’s father. The senator, however, rejected any insinuation of wrongdoing and maintained that he has nothing to hide. News, photos, or videos that arouse the interest of netizens would often go viral on social media, due to the attention netizens give them. These viral posts appeal to the emotions of netizens, and in rare cases, this could also happen to ordinary people, making them very relatable stories that people could easily understand and relate in their lives.</p>
+          </div>
+
+          <!-- Reaction Section -->
+          <div class="reaction-section">
+            <button id="like-btn" class="like-btn">👍 <span id="like-count">0</span></button>
+            <button id="dislike-btn" class="dislike-btn">👎 <span id="dislike-count">0</span></button>
+          </div>
+
+          <!-- Comment Section -->
+          <div class="comment-section">
+            <h3>Comments</h3>
+            <div id="comments-list"></div>
+            <form id="comment-form">
+              <textarea id="comment-input" placeholder="Add a comment..." required></textarea>
+              <button type="submit">Submit Comment</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ FIXED SCRIPT BELOW -->
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const likeCount = localStorage.getItem('article-likes') || 0;
+    const dislikeCount = localStorage.getItem('article-dislikes') || 0;
+    const comments = JSON.parse(localStorage.getItem('article-comments')) || [];
+
+    document.getElementById('like-count').textContent = likeCount;
+    document.getElementById('dislike-count').textContent = dislikeCount;
+
+    const commentsList = document.getElementById('comments-list');
+
+    function renderComments() {
+      commentsList.innerHTML = '';
+      comments.forEach((comment, index) => {
+        const commentDiv = document.createElement('div');
+        commentDiv.className = 'comment';
+        commentDiv.innerHTML = `
+          <p>${comment.text}</p>
+          <div class="comment-reactions">
+            <button class="comment-like-btn" title="Like" data-index="${index}">👍 <span>${comment.likes || 0}</span></button>
+            <button class="comment-dislike-btn" title="Dislike" data-index="${index}">👎 <span>${comment.dislikes || 0}</span></button>
+            <button class="comment-reply-btn" title="Reply" data-index="${index}">💬</button>
+            <button class="comment-delete-btn" title="Delete" data-index="${index}">🗑️</button>
+          </div>
+          <form class="reply-form" style="display: none;">
+            <textarea placeholder="Add a reply..." required></textarea>
+            <button type="submit">Submit Reply</button>
+          </form>
+          <div class="replies">
+            ${comment.replies ? comment.replies.map(reply => `<div class="reply"><p>${reply.text}</p></div>`).join('') : ''}
+          </div>
+        `;
+        commentsList.appendChild(commentDiv);
+      });
+    }
+
+    renderComments();
+
+    document.getElementById('like-btn').addEventListener('click', function () {
+      let currentLikes = parseInt(localStorage.getItem('article-likes')) || 0;
+      currentLikes++;
+      localStorage.setItem('article-likes', currentLikes);
+      document.getElementById('like-count').textContent = currentLikes;
+    });
+
+    document.getElementById('dislike-btn').addEventListener('click', function () {
+      let currentDislikes = parseInt(localStorage.getItem('article-dislikes')) || 0;
+      currentDislikes++;
+      localStorage.setItem('article-dislikes', currentDislikes);
+      document.getElementById('dislike-count').textContent = currentDislikes;
+    });
+
+    document.getElementById('comment-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const commentInput = document.getElementById('comment-input');
+      const commentText = commentInput.value.trim();
+      if (commentText) {
+        comments.push({ text: commentText, likes: 0, dislikes: 0, replies: [] });
+        localStorage.setItem('article-comments', JSON.stringify(comments));
+        commentInput.value = '';
+        renderComments();
+      }
+    });
+
+    document.addEventListener('click', function (e) {
+      const index = e.target.getAttribute('data-index');
+      if (index === null) return;
+
+      if (e.target.classList.contains('comment-like-btn')) {
+        comments[index].likes = (comments[index].likes || 0) + 1;
+        localStorage.setItem('article-comments', JSON.stringify(comments));
+        renderComments();
+      } 
+      else if (e.target.classList.contains('comment-dislike-btn')) {
+        comments[index].dislikes = (comments[index].dislikes || 0) + 1;
+        localStorage.setItem('article-comments', JSON.stringify(comments));
+        renderComments();
+      } 
+      else if (e.target.classList.contains('comment-delete-btn')) {
+        comments.splice(index, 1);
+        localStorage.setItem('article-comments', JSON.stringify(comments));
+        renderComments();
+      } 
+      else if (e.target.classList.contains('comment-reply-btn')) {
+        const replyForm = e.target.closest('.comment').querySelector('.reply-form');
+        replyForm.style.display = replyForm.style.display === 'none' ? 'block' : 'none';
+      }
+    });
+
+    document.addEventListener('submit', function (e) {
+      if (e.target.classList.contains('reply-form')) {
+        e.preventDefault();
+        const commentDiv = e.target.closest('.comment');
+        const index = commentDiv.querySelector('.comment-reply-btn').getAttribute('data-index');
+        const replyText = e.target.querySelector('textarea').value.trim();
+        if (replyText) {
+          comments[index].replies.push({ text: replyText });
+          localStorage.setItem('article-comments', JSON.stringify(comments));
+          renderComments();
+        }
+      }
+    });
+  });
+   function setActiveNav() {
+            const currentPath = window.location.pathname.split('/').pop(); 
+            const navLinks = document.querySelectorAll('.nav-link'); 
+            const slideLinks = document.querySelectorAll('.slide ul li a'); 
+
+            
+            navLinks.forEach(link => link.classList.remove('active'));
+            slideLinks.forEach(link => link.classList.remove('active'));
+
+          
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPath) {
+                    link.classList.add('active');
+                }
+            });
+            slideLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPath) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        
+        document.addEventListener('DOMContentLoaded', setActiveNav);
+  </script>
+</body>
+</html>

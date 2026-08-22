@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>politics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;800&display=swap');
+
+ *{
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+       font-family: 'Poppins', sans-serif;
+       
+      }
+      .f10{
+       margin-left: 36px;
+      text-align: top;
+      padding: 20px;
+      display: flex;
+      font-size: 20px;
+      align-items: center;
+       height: 8px;
+       
+       font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+       color: rgb(253, 3, 3);
+       white-space: nowrap;
+       
+       
+      }
+      .f10 span{
+        
+       font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        color: rgb(249, 249, 5);
+       white-space: nowrap;
+       text-align: 70px;
+      }
+      .f11{
+        background-color: #000000;
+      }
+       body{
+       background-color: #9d9fed;
+       }
+     .slide{
+       height: 700px;
+       width: 180px;
+       position: absolute;
+       background-color:#e2e7f4; 
+       transition: 0.5s ease;
+       transform: translateX(-180px);
+       white-space: nowrap;
+     }
+     h1{
+      color : #ffffff;
+      font-weight: 800;
+      text-align: center;
+      padding: 8px 0;
+      padding-right: 25px;
+      pointer-events: none;
+     }
+     ul li{
+     List-style: none;
+     }
+     ul li a{
+     color: #010812;
+     font-weight: 500;
+     margin-left: 5px;
+     padding: 5px 0;
+     display: block;
+     text-transform: capitalize;
+     text-decoration: none;
+     transition: 0.2s ease-out;
+     }
+     ul li:hover a{
+      margin-left: 0px;
+      color: white;
+      background-color: rgb(52, 212, 212);
+     }
+     ul li a i{
+      width: 50px;
+      text-align: center;
+     } 
+     input{
+     display: none;
+     visibility: hidden;
+    
+     }
+     .toggle{
+     position: absolute;
+     height:28px;
+     width: 28px;
+     top: 64px;
+     Left: 15px;
+     z-index: 1;
+     cursor: pointer;
+     border-radius: 3px;
+     background-color: #dee6ef;
+     box-shadow: 0 0 10px rgba(2, 2, 2, 0.3);
+    }
+    .toggle .common{
+     position: absolute;
+     height: 4px;
+     width: 15px;
+     background-color :#000000;
+     border-radius: 50px;
+     transition: 0.3s ease;
+    }
+    .toggle .top_line{
+     top: 30%;
+     Left: 50%;
+     transform: translate(-50%, -50%);
+   }
+    .toggle .middle_line{
+     top: 50%; 
+     Left: 50%;
+     transform: translate(-50%, -50%);
+    }
+    .toggle .bottom_line{
+     top: 70%; 
+     Left: 50%;
+     transform: translate(-50%, -50%);
+     }
+     input:checked ~ .toggle .top_line{
+      Left: 2px;
+      top: 12px;
+      width: 23px;
+      transform: rotate(45deg);
+    }
+     input:checked ~ .toggle .bottom_line{
+      Left: 2px;
+      top: 12px;
+      width: 23px;
+      transform: rotate(-45deg); 
+     }
+      input:checked ~ .toggle .middle_line{
+      opacity: 0;
+      transform: translateX(20px);
+    }
+      input:checked ~ .slide{
+      transform: translateX(0);
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    }
+
+    html {
+      scroll-behavior: smooth;
+
+   }
+  .f1{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 100px;
+    margin-top: 1650px;
+    top:0%;
+    text-align: center;
+    margin-left: 1010px;
+    font-size: 25px;
+    color: rgb(111, 110, 110);
+    position: absolute;
+    
+  }
+  .f2{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 17px; 
+    text-align: justify;
+  }
+  .f3{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 25px;
+    font-size: 25px;
+    
+  }
+  .f4{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 100px;
+    font-size: 40px;
+    color: rgb(253, 3, 3);
+  }
+  .f5{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 100px;
+    font-size: 40px;
+    color: rgb(249, 249, 5);
+  }
+  .f6{
+    margin-left: 649px;
+    margin-right: 20px;
+    margin-top: -90px;
+    margin-bottom: 700px;
+    position: absolute;
+    line-height: 1.6;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    text-align: justify;
+    color: rgb(197, 197, 194);
+  }
+  .f7{
+    font-size: 25px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: rgb(222, 19, 127);
+  }
+  .f8{
+    text-align: left;
+     color: rgb(20, 19, 19);
+  }
+  .f8.active {
+    color: rgb(52, 212, 212); 
+    text-decoration: underline;
+  }
+  .f12{
+    margin-left:150px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 100px;
+    font-size: 30px;
+    color: rgb(253, 3, 3);
+  }
+  .f13{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 100px;
+    font-size: 30px;
+    color: rgb(249, 249, 5);
+  }
+  .f14{
+    font-size: 11px;
+    margin-left: 21px ;
+    color:  rgb(111, 110, 110);
+  }
+   .f15{
+    font-size: 11px;
+    margin-left: 130px ;
+  }
+  .f151{
+    font-size: 11px;
+    
+  }
+   .f152{
+    font-size: 11px;
+    
+  }
+     .f1523{
+    font-size: 11px;
+    
+  }
+  .f20{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+     color: rgb(111, 110, 110);
+     font-size: 25px;
+    font-weight: 100px;
+    margin-left: 710px;
+  }
+  .fixed-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+   .nav-link.active {
+    color: rgb(52, 212, 212); 
+    text-decoration: underline;
+     
+  }
+
+  
+  ul li a.active {
+    margin-left: 0px;
+    color: white;
+    background-color: rgb(52, 212, 212);
+  }
+    </style>
+</head>
+ 
+    <script>
+        
+        function setActiveNav() {
+            const currentPath = window.location.pathname.split('/').pop(); 
+            const navLinks = document.querySelectorAll('.nav-link'); 
+            const slideLinks = document.querySelectorAll('.slide ul li a'); 
+
+            
+            navLinks.forEach(link => link.classList.remove('active'));
+            slideLinks.forEach(link => link.classList.remove('active'));
+
+          
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPath) {
+                    link.classList.add('active');
+                }
+            });
+            slideLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPath) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        
+        document.addEventListener('DOMContentLoaded', setActiveNav);
+    </script>
+<body class="bg-blue-100" id="home">
+    <div class="fixed-top">
+        <div class="bg-black text-white">
+            <div class="container mx-auto flex justify-between items-center py-2 px-4">
+                <div class="flex space-x-4">
+                    <a href="#" class="text-white text-2xl"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-white text-2xl"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-white text-2xl"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white text-2xl"><i class="fab fa-youtube"></i></a>
+                </div>
+
+                <div class="flex-grow text-center">
+                    <div class="text-4xl font-bold">
+                        <span class="f4">POLITI</span><span class="f5">FACTS</span>
+                    </div>
+                </div>
+                
+                <div class="flex space-x-4 invisible">
+                    <a href="#" class="text-white text-2xl"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-white text-2xl"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-white text-2xl"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white text-2xl"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+      <label>
+        <input type="checkbox">
+          <div class="toggle">
+          <span class="top_line common"></span>
+          <span class="middle_line common"></span>
+          <span class="bottom_line common"></span>
+          </div>
+
+        <div class="slide">
+          <div class="f11">
+          <div class="f10">POLITI<span>FACTS</span></div>
+          </div>
+          <ul>
+            <li><a href="index.html"><h1 class=" f8 text-gray-700 font-extrabold text-[0.90rem]">HOME</h1></a></li>
+            <li><a href="politics.html"><h1 class=" f8 text-gray-700 font-extrabold text-[0.90rem]">POLITICS</h1></a></li>
+            <li><a href="election.html"><h1 class=" f8 text-gray-700 font-extrabold text-[0.90rem]">PUBLIC OPINION</h1></a></li>
+            <li><a href="government.html"><h1 class=" f8 text-gray-700 font-extrabold text-[0.90rem]">GOVERNMENT</h1></a></li>
+            
+            <li><a href="#members"><h1 class=" f8 text-gray-700 font-extrabold text-[0.90rem]">ABOUT US</h1></a></li>
+
+          </ul>
+
+        </div>
+      </label>
+       <div class="bg-white text-white">
+        <div class="flex items-center space-x-4 justify-end space-x-8 px-8 py-3 font-extrabold text-[0.65rem]">
+            <nav class="flex space-x-4 font-sans text-sm">
+                <a class="nav-link text-gray-700 hover:text-teal-500" href="index.html">HOME</a>
+                <a class="nav-link text-gray-700 hover:text-teal-500" href="politics.html">POLITICS</a>
+                <a class="nav-link text-gray-700 hover:text-teal-500"  href="election.html">PUBLIC OPINION</a>
+                <a class="nav-link text-gray-700 hover:text-teal-500" href="government.html">GOVERNMENT</a>
+              
+                <a class="nav-link text-gray-700 hover:text-teal-500" href="#about us">ABOUT US</a>
+                
+                
+            </nav>
+        </div>
+        </div>
+    </div>
+  
+  <div class="container mx-auto px-6 py-8" style="margin-top: 120px;"> 
+   <div class="flex flex-wrap -mx-6">
+    <div class="w-full lg:w-2/3 px-6">
+     <div class="mb-8">
+      <h2 class="f7">
+                POLITICS
+               </h2>
+               <div class="border-t-2 border-gray-300 mb-4">
+               </div>
+               <div class="mb-6">
+                <img class="w-full mb-2" src="images/background.png"/>
+                <div class="flex items-center text-gray-600 text-sm mb-2">
+                 <span>
+                  POLITICS
+                 </span>
+                 <span class="mx-2">
+                  /
+                 </span>
+                 <span>
+                  October 27, 2025
+                 </span>
+                </div>
+                <h3 class="f3">
+                  <a href="p1.html" class="f3 hover:text-teal-500">Business, labor groups unite in call vs corruption.</a>
+                </h3>
+                <h6>
+                  <p class="f2">MANILA, Philippines — The country’s leading business and labor groups on Sunday issued a candid “open letter” to President Ferdinand Marcos Jr., which recommended substantial reforms to show his administration’s determination in stamping out corruption in government.</p>
+                </h6>
+                <br>
+                <br>
+                <div class="mb-6">
+                 <img class="w-full mb-2" src="images/background1.png"/>
+                 <div class="flex items-center text-gray-600 text-sm mb-2">
+                  <span>
+                   POLITICS
+                  </span>
+                  <span class="mx-2">
+                    /
+                  </span>
+                  <span>
+                   October 9, 205
+                  </span>
+                 </div>
+                 <h3 class="f3">
+                  <a href="p2.html" class="f3 hover:text-teal-500">An Overview of the Raging Corruption Scandals in the Philippines.</a>
+                 </h3>
+                 <h6>
+                  <p class="f2">A series of public outrages threatens to mutate into a serious political crisis for President Ferdinand Marcos Jr. A series of large-scale corruption scandals has caused a widespread uproar across the Philippines. 
+                  </p>
+                 </h6>                
+                </div>
+               </div>
+              </div>
+            </div>
+            <br>
+
+             
+            <div class="w-full lg:w-1/3 px-6">
+               <div class="border-t-2 border-gray-300 mb-4">
+               </div>
+               <div class="mb-6">
+                <img alt="Mobile Google CEO" class="w-full mb-2" src="images/background6.jpg"/>
+                <div class="flex items-center text-gray-600 text-sm mb-2">
+                 <span>
+                  POLITICS
+                 </span>
+                 <span class="mx-2">
+                   /
+                 </span>
+                 <span>
+                  October 16, 2025
+                 </span>
+                </div>
+                <h3 class="f3">
+                  <a href="p3.html" class="f3 hover:text-teal-500">Bong Go denies links to Discayas: “Wala akong kinalaman sa kanila”.</a>
+                </h3>
+                <h6>
+                  <p class="f2">Senator Bong Go on Thursday denied allegations linking him to embattled contractors Curlee and Sarah Discaya, who are being investigated for alleged irregularities in government flood control projects.</p>
+                </h6>
+               </div>
+               <div class="mb-6">
+                <img alt="Ford Mustang GT" class="w-full mb-2" src="images/background9.jpg"/>
+                <div class="flex items-center text-gray-600 text-sm mb-2">
+                 <span>
+                  POLITICS
+                 </span>
+                 <span class="mx-2">
+                  /
+                 </span>
+                 <span>
+                  October 14, 2025
+                 </span>
+                </div>
+                <h3 class="f3">
+                  <a href="https://philnews.ph/2025/10/14/mayor-vico-sotto-standard-public-service-people-praise-go-bag-initiative/" class="f3 hover:text-teal-500">Mayor Vico Sotto As The Standard In Public Service, People Praise “Go Bag” Initiative.</a>
+                </h3>
+                <h6>
+                <p class="f2">After a series of earthquakes and other calamities that struck different provinces in the country, Mayor Vico Sotto of Pasig City provided his people with a “Go Bag,” and this was admired by many.
+                </p>
+                </h6>
+                
+               </div>
+                <div class="mb-6">
+                 <img alt="Cityscape" class="w-full mb-2" src="images/background13.jpg"/>
+                 <div class="flex items-center text-gray-600 text-sm mb-2">
+                  <span>
+        
+                   POLITICS
+                  </span>
+                  <span class="mx-2">
+                    /
+                  </span>
+                  <span>
+                   October 27, 2025
+                  </span>
+                 </div>
+                 <h3 class="f3">
+                    <a href="https://politiko.com.ph/2025/10/27/marcos-takaichi-vow-closer-ties-in-security-economy-at-asean-summit/daily-feed/#google_vignette" class="f3 hover:text-teal-500">Marcos, Takaichi Vow Closer Ties in Security, Economy at ASEAN Summit.</a>
+                  </h3>
+                  <h6>
+                    <p class="f2">President Ferdinand Marcos Jr. and Japanese Prime Minister Sanae Takaichi on Sunday reaffirmed their commitment to deepen cooperation in defense, economic growth, and regional stability during a bilateral meeting held on the sidelines of the ASEAN-related summits in Malaysia.</p>
+                  </h6>
+                </div>
+              </div>
+             </div>
+            </div>
+
+         
+    <div class="bg-black text-white" id="about us>
+    
+        <div class="text-6xl font-bold">
+            <span class="f12">POLITI</span><span class="f13">FACTS</span>
+        <div>
+        <div class="flex space-x-4 mt-4">
+            <a href="facebook.com" class="text-gray-400 hover:text-teal-500">
+                <div class=" f15 bg-gray-800 p-3 rounded-full">
+                    <i class=" fab fa-facebook-f"></i>
+                </div>
+            </a>
+            <a href="pinterest.com" class="text-gray-400 hover:text-teal-500">
+                <div class="f151 bg-gray-800 p-3 rounded-full">
+                    <i class="fab fa-twitter"></i>
+                </div>
+            </a>
+            <a href="instagram.com" class="text-gray-400 hover:text-teal-500">
+                <div class=" f152 bg-gray-800 p-3 rounded-full">
+                    <i class="fab fa-instagram"></i>
+                </div>
+            </a>
+           
+            <a href="www.youtube.com" class="text-gray-400 hover:text-teal-500">
+                <div class="f1523 bg-gray-800 p-3 rounded-full">
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </a>
+        </div>
+       <div>
+            <a href="index.html" class="f14 hover:text-teal-500 font-extrabold text-[0.65rem]">HOME</a>
+            <a href="politics.html" class="f14 hover:text-teal-500 font-extrabold text-[0.65rem]">POLITICS</a>
+            <a href="election.html" class=" f14 hover:text-teal-500 font-extrabold text-[0.65rem]">PUBLIC OPINION</a>
+            <a href="government.html" class="f14 hover:text-teal-500 font-extrabold text-[0.65rem]">GOVERNMENT</a>
+            <a href="#about us" class="f14 hover:text-teal-500 font-extrabold text-[0.65rem]">ABOUT US</a>
+           
+        </div>
+       
+                <div class="f1"id="about us">About us</div>
+                
+                <p class="f6"> At Politifacts, we are committed to delivering accurate, timely, and unbiased political news. In an era of misinformation and fast-changing headlines, our mission is to provide readers with clear insights, fact-checked reports, and comprehensive coverage of political events from around the world. Whether you're a concerned citizen, a student, or simply someone who wants to stay informed, Politifacts is your trusted source for understanding the facts behind the politics.
+
+                </p>
+              
+                <br>
+                <br>
+                <div class="f20">Members</div>
+                 <div class="flex flex-nowrap justify-center gap-6 max-w-full mx-auto" id="members">
+                  <img alt="RUIN" class="w-[100px] h-[100px] object-cover flex-shrink-0" height="120" src="members/background0.jpg" width="100"/>
+                  <img alt="ARCINUE" class="w-[100px] h-[100px] object-cover flex-shrink-0" height="120" src="members/background01.jpg" width="100"/>
+                  <img alt="ACUNA" class="w-[100px] h-[100px] object-cover flex-shrink-0" height="120" src="members/background02.jpg" width="100"/>
+                  <img alt="MONTALES" class="w-[100px] h-[100px] object-cover flex-shrink-0" height="120" src="members/background03.jpg" width="100"/>
+                  <img alt="BOLANOS" class="w-[100px] h-[100px] object-cover flex-shrink-0" height="120" src="members/background04.jpg" width="100"/>
+                  <img alt="TABUSO" class="w-[100px] h-[100px] object-cover flex-shrink-0" height="120" src="members/background05.jpg" width="100"/>
+                  <img alt="MALATE" class="w-[100px] h-[100px] object-cover flex-shrink-0" height="120" src="members/background06.png" width="100"/>
+                  <img alt="MARILAG" class="w-[100px] h-[100px] object-cover flex-shrink-0" height="120" src="members/background07.jpg" width="100"/>
+                  <img alt="MARILAG" class="w-[100px] h-[100px] object-cover flex-shrink-0" height="120" src="members/background07.jpg" width="100"/>
+                 </div>   
+            </div>
+        </div>
+</div>
+</body>
+</html>
+
+  
